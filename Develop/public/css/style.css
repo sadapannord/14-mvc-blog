@@ -22,4 +22,9 @@ header, .post:not(:last-child) {
     font-weight: bold;
     margin-left: -5px;
   }
-  
+
+  .container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+  }
