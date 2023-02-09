@@ -28,6 +28,13 @@ router.post("/", withAuth, async (req, res) => {
 
 router.post("/:id", withAuth, async (req, res) => {
   const comment = document.querySelector("#comment").value.trim();
+  try {
+    comment = await Comment.create({
+      ...req.body,
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 router.delete("/:id", withAuth, async (req, res) => {
